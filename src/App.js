@@ -17,9 +17,11 @@ function App() {
 
     async function fetchForks() {
       try {
+        // OBS.: Adicionar meu token pessoal do GitHub para aumentar o número de requisições para a API deles
         const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
         const response = await fetch(repoUrl);
         const forksData = await response.json();
+        console.log('forksData: ', forksData);
 
         const forksNormalized = forksData?.map((fork) => {
           const languages = fetchLanguages(fork.owner.login);
