@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   const [repository, setRepository] = useState([]);
-  const [users, setUsers] = useState([]);
+  const [forks, setForks] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const accessToken = process.env.GITHUB_TOKEN;
+  const [isUserDataRepository, setIsUserDataRepository] = useState(false);
+  const [userRepository, setUserRepository] = useState([]);
 
   useEffect(() => {
     async function fetchRepository() {
@@ -14,8 +15,6 @@ function App() {
         const response = await fetch(repoUrl);
         const repositoryData = await response.json();
         setRepository(repositoryData);
-        setIsLoading(false);
-        console.log('repositoryData: ', repositoryData);
       } catch (error) {
         console.error('Erro ao buscar informações do repositório: ', error);
       }
@@ -25,7 +24,8 @@ function App() {
       try {
         const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
         var page = 1;
-        var allLogins = [];
+        var allForks = [];
+        // var allLogins = [];
     
         while (true) {
           const response = await fetch(`${repoUrl}?page=${page}`);
@@ -37,81 +37,42 @@ function App() {
 
           page++;
     
-          const logins = forksData.map(fork => fork.owner.login);
-          allLogins = allLogins.concat(logins);
+          allForks = allForks.concat(forksData);
+          // const logins = forksData.map(fork => fork.owner.login);
+          // allLogins = allLogins.concat(logins);
         }
     
-        setUsers(allLogins);
-        console.log('allLogins: ', allLogins);
+        // setUsers(allLogins);
+        // console.log('allLogins: ', allLogins);
+        setForks(allForks);
+        setIsLoading(false);
+        console.log('allForks: ', allForks);
       } catch (error) {
         console.error('Erro ao buscar forks: ', error);
       }
-    }
-
-    // async function fethAllRepositories() {
-    //   var allRepositories = [];
-
-    //   for (const login of users) {
-    //     try {
-    //       const repositoryUrl = `https://api.github.com/${login}/rinha-de-backend`;
-    //       const repositoryResponse = await fetch(repositoryUrl);
-    //       const repositoryData = await repositoryResponse.json();
-  
-    //       allRepositories = allRepositories.concat(repositoryData);
-    //       setIsLoading(false);
-    //       console.log(`Informações do usuário ${login}: `, repositoryData);
-    //     } catch (error) {
-    //       console.error(`Erro ao buscar informações do usuário ${login}: `, error);
-    //     }
-    //   }
-    // }
-
-    async function fethAllRepositories() {
-      try {
-        var allRepositories = [];
-        const batchSize = 170; // Tamanho do lote de logins por chamada
-    
-        // Dividir os logins em lotes menores
-        for (let i = 0; i < users.length; i += batchSize) {
-          const batchLogins = users.slice(i, i + batchSize);
-    
-          // Fazer uma única chamada para todos os logins no lote atual
-          const batchPromises = batchLogins.map(async login => {
-            try {
-              const repositoryUrl = (`https://api.github.com/users/${login}/rinha-de-backend`, {
-                headers: {
-                  Authorization: `Bearer ${accessToken}`
-                }
-              });
-              const repositoryResponse = await fetch(repositoryUrl);
-              const repositoryData = await repositoryResponse.json();
-              return repositoryData;
-            } catch (error) {
-              console.error(`Erro ao buscar informações do usuário ${login}: `, error);
-              return null;
-            }
-          });
-    
-          // Esperar todas as chamadas do lote atual
-          const batchResults = await Promise.all(batchPromises);
-    
-          // Filtrar resultados nulos (chamadas com erro)
-          const validResults = batchResults.filter(result => result !== null);
-    
-          allRepositories = allRepositories.concat(validResults);
-        }
-    
-        setIsLoading(false);
-        console.log('Informações de todos os repositórios: ', allRepositories);
-      } catch (error) {
-        console.error('Erro ao buscar informações dos repositórios: ', error);
-      }
-    }    
+    } 
 
     fetchRepository();
     fetchAllForks();
-    fethAllRepositories();
   }, []);
+
+  async function fethUserRepository(userLogin) {
+    try {
+      const repositoryUrl = `https://api.github.com/repos/${userLogin}/rinha-de-backend`;
+      const repositoryResponse = await fetch(repositoryUrl);
+      const repositoryData = await repositoryResponse.json();
+
+      console.log(`Informações do usuário ${userLogin}: `, repositoryData);
+      setIsUserDataRepository(true);
+      setUserRepository(repositoryData);
+    } catch (error) {
+      console.error(`Erro ao buscar informações do usuário ${userLogin}: `, error);
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsUserDataRepository(false);
+  };
 
   return (
     <div>
@@ -119,7 +80,7 @@ function App() {
       {
         isLoading ? <h1>Carregando ... 🥚🐣</h1> :
         <div>
-          {/* <div>
+          <div>
             <p>Descrição: {repository.description}</p>
             <p>Estrelas: {repository.stargazers_count}</p>
             <p>Forks: {repository.forks_count}</p>
@@ -130,11 +91,13 @@ function App() {
             <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
               <img src={repository.owner.avatar_url} alt={repository.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
             </a>
-          </div> */}
+          </div>
 
-          {/* <ul>
+          <ul>
             {forks?.map((fork) => (
-              <li key={fork.id}>
+              <li
+                key={fork.id}
+              >
                 <p>
                   <strong>
                     <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
@@ -145,11 +108,33 @@ function App() {
                 <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
                   <img src={fork.owner.avatar_url} alt={fork.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
                 </a>
-                <p><strong>URL:</strong> <a href={fork.html_url} target="_blank" rel="noopener noreferrer">{fork.html_url}</a></p>
-                <p>{fork.updated_at}</p>
+                <button
+                  onMouseEnter={() => fethUserRepository(fork.owner.login)}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ padding: '8px 16px' }}
+                >
+                  Repositório 🔍
+                </button>
+                {
+                  isUserDataRepository ?
+                    <div>
+                      <p>Linguagem: {userRepository.language}</p>
+                      <p><strong>Link para o Repositório:</strong> <a href={repository.html_url} target="_blank" rel="noopener noreferrer">{repository.html_url}</a></p>
+                      <p><strong>Criado em:</strong> {repository.created_at}</p>
+                      <p><strong>Última Atualização:</strong> {repository.updated_at}</p>
+                      <p><strong>Clone URL:</strong> {repository.clone_url}</p>
+                    </div>
+                    
+                  :
+                    
+                    <div>
+                      <p><strong>URL:</strong> <a href={fork.html_url} target="_blank" rel="noopener noreferrer">{fork.html_url}</a></p>
+                      <p>{fork.updated_at}</p>
+                    </div>
+                }
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       }
     </div>
