@@ -1,61 +1,102 @@
 import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [repository, setRepository] = useState([]);
   const [forks, setForks] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchLanguages(userLogin) {
+    async function fetchRepository() {
       try {
-        const userLanguagesUrl = `https://api.github.com/repos/${userLogin}/rinha-de-backend-2023-q3/languages`;
-        const response = await fetch(userLanguagesUrl);
-        const languagesData = await response.json();
-        return languagesData;
+        const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3';
+        const response = await fetch(repoUrl);
+        const repositoryData = await response.json();
+        setRepository(repositoryData);
+        setIsLoading(false);
+        console.log('repositoryData: ', repositoryData);
       } catch (error) {
-        console.log('Erro ao buscar as linguagens: ', error);
+        console.error('Erro ao buscar informações do repositório: ', error);
       }
     }
 
-    async function fetchForks() {
+    async function fetchAllForks() {
       try {
-        // OBS.: Adicionar meu token pessoal do GitHub para aumentar o número de requisições para a API deles
         const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
-        const response = await fetch(repoUrl);
-        const forksData = await response.json();
-        console.log('forksData: ', forksData);
-
-        const forksNormalized = forksData?.map((fork) => {
-          const languages = fetchLanguages(fork.owner.login);
-          return {
-            ...fork,
-            language: languages,
-          };
-        });
-
-        const normalizedForks = await Promise.all(forksNormalized);
-
-        setForks(normalizedForks);
-        console.log('forksNormalized: ', normalizedForks);
+        let page = 1;
+        let allForks = [];
+        let allLogins = [];
+    
+        while (true) {
+          const response = await fetch(`${repoUrl}?page=${page}`);
+          const forksData = await response.json();
+    
+          if (forksData.length === 0) {
+            break; // Saia do loop se não houver mais forks
+          }
+    
+          allForks = allForks.concat(forksData);
+          page++;
+    
+          const logins = forksData.map(fork => fork.owner.login);
+          allLogins = allLogins.concat(logins);
+        }
+    
+        setForks(allForks);
+        setIsLoading(false);
+        // console.log('allForks: ', allForks);
+        setUsers(allLogins);
+        console.log('allLogins: ', allLogins);
       } catch (error) {
         console.error('Erro ao buscar forks: ', error);
       }
     }
+    
+    //  TODO: Com allUsers em users fazer chamada para url personalizada: https://github.com/${korodzi}/rinha-de-backend onde tem informações de cada repositório individual
+    //  Com essas informações montar o card na página 
 
-    fetchForks();
+    fetchRepository()
+    fetchAllForks();
   }, []);
 
   return (
     <div>
       <h1>Rinha de Backend 🐓</h1>
-      <ul>
-        {forks?.map((fork) => (
-          <li key={fork.id}>
-            <p><strong>{fork.owner.login}</strong></p>
-            <p><strong>URL:</strong> <a href={fork.html_url} target="_blank" rel="noopener noreferrer">{fork.html_url}</a></p>
-            <p>Linguagens: {fork.language[0]}</p>
-            <p>{fork.updated_at}</p>
-          </li>
-        ))}
-      </ul>
+      {
+        isLoading ? <h1>Carregando ... 🥚🐣</h1> :
+        <div>
+          <div>
+            <p>Descrição: {repository.description}</p>
+            <p>Estrelas: {repository.stargazers_count}</p>
+            <p>Forks: {repository.forks_count}</p>
+            <p>Linguagem: {repository.language}</p>
+            <p>Data de Criação: {repository.created_at}</p>
+            <p>Última Atualização: {repository.updated_at}</p>
+            <p>Proprietário: <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">{repository.owner.login}</a></p>
+            <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
+              <img src={repository.owner.avatar_url} alt={repository.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
+            </a>
+          </div>
+          <ul>
+            {forks?.map((fork) => (
+              <li key={fork.id}>
+                <p>
+                  <strong>
+                    <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
+                      {fork.owner.login}
+                    </a>
+                  </strong>
+                </p>
+                <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
+                  <img src={fork.owner.avatar_url} alt={fork.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
+                </a>
+                <p><strong>URL:</strong> <a href={fork.html_url} target="_blank" rel="noopener noreferrer">{fork.html_url}</a></p>
+                <p>{fork.updated_at}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      }
     </div>
   );
 }
