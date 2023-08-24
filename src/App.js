@@ -25,25 +25,22 @@ function App() {
         const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
         var page = 1;
         var allForks = [];
-        // var allLogins = [];
     
         while (true) {
           const response = await fetch(`${repoUrl}?page=${page}`);
           const forksData = await response.json();
     
           if (forksData.length === 0) {
-            break; // Saia do loop se não houver mais forks
+            break;
           }
 
           page++;
     
           allForks = allForks.concat(forksData);
-          // const logins = forksData.map(fork => fork.owner.login);
-          // allLogins = allLogins.concat(logins);
         }
-    
-        // setUsers(allLogins);
-        // console.log('allLogins: ', allLogins);
+  
+        allForks.sort((a, b) => a.owner.login.localeCompare(b.owner.login));
+
         setForks(allForks);
         setIsLoading(false);
       } catch (error) {
@@ -69,6 +66,13 @@ function App() {
     return userFork;
   }
 
+  const dateBrasilian = (isoDateString) => {
+    const isoDate = new Date(isoDateString);
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const brasilFormattedDate = isoDate.toLocaleDateString('pt-BR', options);
+    return brasilFormattedDate;
+  }
+
   return (
     <div>
       <h1>Rinha de Backend 🐓</h1>
@@ -81,8 +85,8 @@ function App() {
             <p>Estrelas: {repository.stargazers_count}</p>
             <p>Forks: {repository.forks_count}</p>
             <p>Linguagem: {repository.language}</p>
-            <p>Data de Criação: {repository.created_at}</p>
-            <p>Última Atualização: {repository.updated_at}</p>
+            <p>Data de Criação: {dateBrasilian(repository.created_at)}</p>
+            <p>Última Atualização: {dateBrasilian(repository.updated_at)}</p>
             <p>Proprietário: <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">{repository.owner.login}</a></p>
             <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
               <img src={repository.owner.avatar_url} alt={repository.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
