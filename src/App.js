@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './components/Card';
+import './css/App.css'
 
 function App() {
   const [repository, setRepository] = useState([]);
@@ -42,7 +43,10 @@ function App() {
         allForks.sort((a, b) => a.owner.login.localeCompare(b.owner.login));
 
         setForks(allForks);
-        setIsLoading(false);
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1500); 
       } catch (error) {
         console.error('Erro ao buscar forks: ', error);
       }
@@ -75,51 +79,66 @@ function App() {
 
   return (
     <div>
-      <h1>Rinha de Backend 🐓</h1>
       {isLoading ? (
         <h1>Carregando ... 🥚🐣</h1>
       ) : (
         <div>
-          <div>
-            <p>Descrição: {repository.description}</p>
-            <p>Estrelas: {repository.stargazers_count}</p>
-            <p>Forks: {repository.forks_count}</p>
-            <p>Linguagem: {repository.language}</p>
-            <p>Data de Criação: {dateBrasilian(repository.created_at)}</p>
-            <p>Última Atualização: {dateBrasilian(repository.updated_at)}</p>
-            <p>Proprietário: <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">{repository.owner.login}</a></p>
+          <div id="header">
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken" className="icon-header"/>
+            <h1 id="title-header">
+              Rinha de Backend
+            </h1>
+            
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/star.png" alt="star" className="icon-header"/>
+            <p>{repository.stargazers_count}</p>
+
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/user-male-circle.png" alt="user-male-circle" className="icon-header"/>
+            <p>{repository.forks_count}</p>
+
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/laptop.png" alt="laptop" className="icon-header"/>
+            <p>{repository.language}</p>
+
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/restart--v1.png" alt="restart--v1" className="icon-header"/>
+            <p>{dateBrasilian(repository.updated_at)}</p>
             <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
-              <img src={repository.owner.avatar_url} alt={repository.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
+              <img src={repository.owner.avatar_url} alt={repository.owner.login} id="img-admin" />
             </a>
+            <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer" id="login-admin">{repository.owner.login}</a>
           </div>
 
-          <ul>
-            {forks?.map((fork) => (
-              <li key={fork.id}>
-                <p>
-                  <strong>
-                    <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
-                      {fork.owner.login}
-                    </a>
-                  </strong>
-                </p>
-                <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
-                  <img src={fork.owner.avatar_url} alt={fork.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
-                </a>
+          <div id="home-content">
+            <ul>
+              {forks?.map((fork) => (
+                <li key={fork.id}>
+                  <p>
+                    <strong>
+                      <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
+                        {fork.owner.login}
+                      </a>
+                    </strong>
+                  </p>
+                  <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
+                    <img src={fork.owner.avatar_url} alt={fork.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
+                  </a>
 
-                {showCardForUser[fork.owner.login] ? (
-                  <div>
-                    <Card userFork={searchUserData(fork.owner.login)} />
-                    <button onClick={() => handleBackClick(fork.owner.login)}>Voltar</button>
-                  </div>
-                ) : (
-                  <button onClick={() => handleButtonClick(fork.owner.login)}>Ver detalhes</button>
-                )}
-              </li>
-            ))}
-          </ul>
+                  {showCardForUser[fork.owner.login] ? (
+                    <div>
+                      <Card userFork={searchUserData(fork.owner.login)} />
+                      <button onClick={() => handleBackClick(fork.owner.login)}>Voltar</button>
+                    </div>
+                  ) : (
+                    <button onClick={() => handleButtonClick(fork.owner.login)}>Ver detalhes</button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
+      <footer>
+        <p>Francisco Zanfranceschi</p>
+        <p>Klecianny Melo</p>
+      </footer>
     </div>
   );
 }
