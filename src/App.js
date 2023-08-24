@@ -105,7 +105,7 @@ function App() {
 
                 {showCardForUser[fork.owner.login] ? (
                   <div>
-                    <Card userLogin={fork.owner.login} userFork={searchUserData(fork.owner.login)} />
+                    <Card userFork={searchUserData(fork.owner.login)} />
                     <button onClick={() => handleBackClick(fork.owner.login)}>Voltar</button>
                   </div>
                 ) : (

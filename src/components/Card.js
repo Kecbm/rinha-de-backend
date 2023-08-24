@@ -1,70 +1,52 @@
 import React, { useState, useEffect } from 'react';
 
-function Card(props) {
+function Card({ userFork }) {
   const [userRepository, setUserRepository] = useState(null);
 
-  console.log('userFork: ', props.userFork);
-
   useEffect(() => {
-    // async function fetchUserRepository() {
-    //   try {
-    //     const repoUrl = `https://api.github.com/repos/${props.userLogin}/rinha-de-backend-2023-q3`;
-    //     const response = await fetch(repoUrl);
-    //     const repositoryData = await response.json();
-
-    //     setUserRepository(repositoryData);
-    //     console.log('userRepository: ', userRepository);
-    //   } catch (error) {
-    //     console.error('Erro ao buscar informações do repositório: ', error);
-    //   }
-    // }
-
-    async function fetchUserRepository() {
+    async function fetchUserRepositories(userFork) {
       try {
-        const searchQuery = encodeURIComponent(`rinha-de-backend`);
-        const repoUrl = `https://api.github.com/search/repositories?q=${searchQuery}+user:${props.userLogin}`;
-        const response = await fetch(repoUrl);
-        const searchData = await response.json();
+        if (userFork) {
+          const userReposUrl = `https://api.github.com/users/${userFork.owner.login}/repos`;
+          const response = await fetch(userReposUrl);
+          const repositories = await response.json();
     
-        if (searchData.items.length > 0) {
-          // Supondo que você deseje pegar o primeiro repositório encontrado
-          const repositoryUrl = searchData.items[0].url;
-          const repositoryResponse = await fetch(repositoryUrl);
-          const repositoryData = await repositoryResponse.json();
+          const filteredRepos = repositories.find(repo => repo.name.includes('rinha-de-backend'));
     
-          setUserRepository(repositoryData);
-          console.log('userRepository: ', userRepository);
-        } else {
-          console.log('Nenhum repositório correspondente encontrado');
+          console.log('filteredRepos: ', filteredRepos);
+          setUserRepository(filteredRepos);
         }
       } catch (error) {
-        console.error('Erro ao buscar informações do repositório: ', error);
+        console.error('Erro ao buscar repositórios do usuário: ', error);
       }
-    }      
+    }
 
-    fetchUserRepository();
-  }, [props.userLogin]);
+    fetchUserRepositories(userFork);
+  }, [userFork]);
 
-  if(props.userFork !== null) {
+  if (userRepository) {
     return (
-        <div>
-          <p>Informações do fork:</p>
-          <p>Usuário do fork:</p>
-          {/* Renderizar mais informações do fork aqui */}
-        </div>
+      <div>
+        <p>Informações dos repositórios do usuário:</p>
+        <p>Linguagem: {userRepository.language}</p>
+        <p><strong>Link para o Repositório:</strong> <a href={userRepository.html_url} target="_blank" rel="noopener noreferrer">{userRepository.html_url}</a></p>
+        <p><strong>Criado em:</strong> {userRepository.created_at}</p>
+        <p><strong>Última Atualização:</strong> {userRepository.updated_at}</p>
+        <p><strong>Clone URL:</strong> {userRepository.clone_url}</p>
+      </div>
     );
   }
 
-  if(userRepository !== null) {
-    return (
-        <div>
-          <p>Informações da API do GitHub:</p>
-          <p>Nome do repositório: {userRepository.name}</p>
-          <p>Descrição: {userRepository.description}</p>
-          {/* Renderizar mais informações da API aqui */}
-        </div>
-    );
-  }
+  // if (userFork !== null) {
+  //   return (
+  //     <div>
+  //       <p>Informações do fork:</p>
+  //       {/* Renderizar mais informações do fork aqui */}
+  //     </div>
+  //   );
+  // }
+
+  // return <div>Carregando...</div>;
 }
 
 export default Card;
