@@ -84,10 +84,12 @@ function App() {
       ) : (
         <div>
           <div id="header">
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken" className="icon-header"/>
+            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken" id="icon-chicken"/>
             <h1 id="title-header">
               Rinha de Backend
             </h1>
+
+            <span className="space" />
             
             <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/star.png" alt="star" className="icon-header"/>
             <p>{repository.stargazers_count}</p>
@@ -100,38 +102,37 @@ function App() {
 
             <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/restart--v1.png" alt="restart--v1" className="icon-header"/>
             <p>{dateBrasilian(repository.updated_at)}</p>
+
+            <span className="space" />
+
             <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
               <img src={repository.owner.avatar_url} alt={repository.owner.login} id="img-admin" />
             </a>
-            <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer" id="login-admin">{repository.owner.login}</a>
+            <h3 id="login-admin">
+              <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">{repository.owner.login}</a>
+            </h3>
           </div>
 
           <div id="home-content">
-            <ul>
-              {forks?.map((fork) => (
-                <li key={fork.id}>
-                  <p>
-                    <strong>
-                      <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
-                        {fork.owner.login}
-                      </a>
-                    </strong>
-                  </p>
-                  <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
-                    <img src={fork.owner.avatar_url} alt={fork.owner.login} style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
-                  </a>
+            {forks?.map((fork) => (
+              <div key={fork.id} className="card-user">
+                <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
+                  <img src={fork.owner.avatar_url} alt={fork.owner.login}  className="user-img" />
+                </a>
+                <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer" className="user-login">
+                  {fork.owner.login}
+                </a>
 
-                  {showCardForUser[fork.owner.login] ? (
-                    <div>
-                      <Card userFork={searchUserData(fork.owner.login)} />
-                      <button onClick={() => handleBackClick(fork.owner.login)}>Voltar</button>
-                    </div>
-                  ) : (
-                    <button onClick={() => handleButtonClick(fork.owner.login)}>Ver detalhes</button>
-                  )}
-                </li>
-              ))}
-            </ul>
+                {showCardForUser[fork.owner.login] ? (
+                  <div>
+                    <Card userFork={searchUserData(fork.owner.login)} />
+                    <button onClick={() => handleBackClick(fork.owner.login)} className="btn">Voltar</button>
+                  </div>
+                ) : (
+                  <button onClick={() => handleButtonClick(fork.owner.login)} className="btn btn-details" >Ver detalhes</button>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
