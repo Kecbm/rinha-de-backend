@@ -124,9 +124,9 @@ function App() {
                 </a>
 
                 {showCardForUser[fork.owner.login] ? (
-                  <div>
+                  <div className="card-user-infos">
                     <Card userFork={searchUserData(fork.owner.login)} />
-                    <button onClick={() => handleBackClick(fork.owner.login)} className="btn">Voltar</button>
+                    <button onClick={() => handleBackClick(fork.owner.login)} className="btn btn-return">Voltar</button>
                   </div>
                 ) : (
                   <button onClick={() => handleButtonClick(fork.owner.login)} className="btn btn-details" >Ver detalhes</button>

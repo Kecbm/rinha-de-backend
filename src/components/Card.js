@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/Card.css';
 
 function Card({ userFork }) {
   const [userRepository, setUserRepository] = useState(null);
@@ -46,9 +47,8 @@ function Card({ userFork }) {
     return (
       <div>
         <div>
-          <p>Informações dos repositórios do usuário</p>
           <p>
-            <strong>Link para o Repositório:</strong>{' '}
+            <strong>Link do Repositório</strong>{' '}
             <a
               href={userRepository.html_url}
               target="_blank"
@@ -58,13 +58,10 @@ function Card({ userFork }) {
             </a>
           </p>
           <p>
-            <strong>Criado em:</strong> {dateBrasilian(userRepository.created_at)}
-          </p>
-          <p>
             <strong>Última Atualização:</strong> {dateBrasilian(userRepository.updated_at)}
           </p>
           <p>
-            <strong>Clone URL:</strong>{' '}
+            <strong>Clone URL</strong>{' '}
             <a
               href={userRepository.clone_url}
               target="_blank"
@@ -80,34 +77,28 @@ function Card({ userFork }) {
 
   if (userFork) {
     return (
-      <div>
-        <h1>UserFork</h1>
-        <p>
-          <strong>Link para o Repositório:</strong>{' '}
-          <a
-            href={userFork.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {userFork.html_url}
-          </a>
-        </p>
-        <p>
-          <strong>Criado em:</strong> {dateBrasilian(userFork.created_at)}
-        </p>
+      <div className="fork-infos">
+        <a
+          href={userFork.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>
+            <strong>Link do Repositório</strong>
+          </p>
+        </a>
         <p>
           <strong>Última Atualização:</strong> {dateBrasilian(userFork.updated_at)}
         </p>
-        <p>
-          <strong>Clone URL:</strong>{' '}
-          <a
-            href={userFork.clone_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {userFork.clone_url}
-          </a>
-        </p>
+        <a
+          href={userFork.clone_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>
+            <strong>Clone URL</strong>
+          </p>
+        </a>
       </div>
     );
   }
