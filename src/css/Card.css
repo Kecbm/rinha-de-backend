@@ -1,12 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+.loading {
+    margin-bottom: 25px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading h1 {
+    display: inline-block;
+}
+
+.loading h1 {
+    animation: bounce .6s cubic-bezier(0.6, 0.1, 1, 0.4);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.loading h1:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.loading h1:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.loading h1:nth-child(3) {
+    animation-delay: .3s;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(50px);
+    }
+}
+
 .card-infos {
     font-family: 'Poppins';
     font-weight: 300;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: center; */
 }
 
 .card-infos p {
@@ -16,4 +51,8 @@
 
 .card-icon {
     margin-right: 10px;
+}
+
+.update {
+    margin-right: 5px;
 }

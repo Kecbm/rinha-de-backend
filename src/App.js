@@ -46,7 +46,7 @@ function App() {
 
         setTimeout(() => {
           setIsLoading(false);
-        }, 1500); 
+        }, 3500); 
       } catch (error) {
         console.error('Erro ao buscar forks: ', error);
       }
@@ -70,49 +70,45 @@ function App() {
     return userFork;
   }
 
-  const dateBrasilian = (isoDateString) => {
-    const isoDate = new Date(isoDateString);
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    const brasilFormattedDate = isoDate.toLocaleDateString('pt-BR', options);
-    return brasilFormattedDate;
-  }
-
   return (
     <div>
-      {isLoading ? (
-        <h1>Carregando ... 🥚🐣</h1>
-      ) : (
-        <div>
-          <div id="header">
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken" id="icon-chicken"/>
-            <h1 id="title-header">
-              Rinha de Backend
-            </h1>
+      <div id="header">
+        <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken" id="icon-chicken"/>
+        <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">
+          <h1 id="title-header">
+            Rinha de Backend
+          </h1>
+        </a>
 
-            <span className="space" />
-            
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/star.png" alt="star" className="icon-header"/>
-            <p>{repository.stargazers_count}</p>
+        <span className="space" />
+        
+        <button className="btn">Forks</button>
+        <button className="btn">Top 10</button>
+        <button className="btn">Vencedor</button>
 
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/user-male-circle.png" alt="user-male-circle" className="icon-header"/>
-            <p>{repository.forks_count}</p>
+        <span className="space" />
 
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/laptop.png" alt="laptop" className="icon-header"/>
-            <p>{repository.language}</p>
-
-            <img width="50" height="50" src="https://img.icons8.com/3d-fluency/94/restart--v1.png" alt="restart--v1" className="icon-header"/>
-            <p>{dateBrasilian(repository.updated_at)}</p>
-
-            <span className="space" />
-
-            <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">
-              <img src={repository.owner.avatar_url} alt={repository.owner.login} id="img-admin" />
+        {repository && (
+          <div id="admin-infos">
+            <a href={repository.owner?.html_url ?? ''} target="_blank" rel="noopener noreferrer">
+              <img src={repository.owner?.avatar_url} alt={repository.owner?.login} id="img-admin" />
             </a>
             <h3 id="login-admin">
-              <a href={repository.owner.html_url} target="_blank" rel="noopener noreferrer">{repository.owner.login}</a>
+              <a href={repository.owner?.html_url ?? ''} target="_blank" rel="noopener noreferrer">
+                {repository.owner?.login}
+              </a>
             </h3>
           </div>
-
+        )}
+      </div>
+      {isLoading ? (
+        <div className="loading-home">
+          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/chicken.png" alt="chicken"/>
+          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/eggs.png" alt="eggs"/>
+          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/sunny-side-up-eggs.png" alt="sunny-side-up-eggs"/>
+        </div>
+      ) : (
+        <div>
           <div id="home-content">
             {forks?.map((fork) => (
               <div key={fork.id} className="card-user">
@@ -137,8 +133,56 @@ function App() {
         </div>
       )}
       <footer>
-        <p>Francisco Zanfranceschi</p>
-        <p>Klecianny Melo</p>
+        <div>
+          <h3>Francisco Zanfranceschi</h3>
+          <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/github.png" alt="GitHub"/>
+          </a>
+          <a href="https://twitter.com/zanfranceschi" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/twitter--v1.png" alt="Twitter"/>
+          </a>
+          <a href="https://www.linkedin.com/in/francisco-zanfranceschi/" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/linkedin.png" alt="Linkedin"/>
+          </a>
+          <a href="https://dev.to/zanfranceschi" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/windows/96/FFFFFF/dev.png" alt="Dev.to"/>
+          </a>
+          <a href="https://www.youtube.com/@zanfranceschi/videos" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/youtube--v1.png" alt="Youtube"/>
+          </a>
+        </div>
+
+        <div>
+          <h3>Klecianny Melo</h3>
+          <a href="https://github.com/Kecbm" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/github.png" alt="GitHub"/>
+          </a>
+          <a href="https://twitter.com/Kecbm" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/twitter--v1.png" alt="Twitter"/>
+          </a>
+          <a href="https://www.linkedin.com/in/kecbm/" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/linkedin.png" alt="Linkedin"/>
+          </a>
+          <a href="https://dev.to/kecbm" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/windows/96/FFFFFF/dev.png" alt="Dev.to"/>
+          </a>
+        </div>
+
+        <div>
+          <h3>Repositório</h3>
+          <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">
+            <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/github.png" alt="github"/>
+          </a>
+        </div>
+
+        <div>
+          <h3>Live</h3>
+          <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/youtube--v1.png" alt="youtube--v1"/>
+        </div>
+
+        <div>
+          <h1 id="icon-chicken-footer">🐓</h1>
+        </div>
       </footer>
     </div>
   );

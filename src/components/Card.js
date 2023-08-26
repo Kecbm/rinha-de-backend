@@ -22,7 +22,7 @@ function Card({ userFork }) {
 
           setTimeout(() => {
             setIsLoading(false);
-          }, 1500); 
+          }, 3000); 
         }
       } catch (error) {
         console.error('Erro ao buscar repositórios do usuário: ', error);
@@ -33,7 +33,13 @@ function Card({ userFork }) {
   }, [userFork]);
 
   if (isLoading) {
-    return (<h1 id="loading-card">Carregando ... 🐥🐤</h1>)
+    return (
+      <div className="loading">
+        <h1>🥚</h1>
+        <h1>🐣</h1>
+        <h1>🐥</h1>
+      </div>
+    )
   }
 
   const dateBrasilian = (isoDateString) => {
@@ -56,7 +62,7 @@ function Card({ userFork }) {
           </p>
         </a>
         <p>
-        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong>Última Atualização:</strong> {dateBrasilian(userRepository.updated_at)}
+        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong className="update">Última Atualização:</strong> {dateBrasilian(userRepository.updated_at)}
         </p>
         <a
           href={userRepository.clone_url}
@@ -84,7 +90,7 @@ function Card({ userFork }) {
           </p>
         </a>
         <p>
-        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong>Última Atualização</strong>{dateBrasilian(userFork.updated_at)}
+        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong className="update">Última Atualização:</strong>{dateBrasilian(userFork.updated_at)}
         </p>
         <a
           href={userFork.clone_url}
