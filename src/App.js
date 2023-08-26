@@ -126,10 +126,10 @@ function App() {
                 {showCardForUser[fork.owner.login] ? (
                   <div className="card-user-infos">
                     <Card userFork={searchUserData(fork.owner.login)} />
-                    <button onClick={() => handleBackClick(fork.owner.login)} className="btn btn-return">Voltar</button>
+                    <button onClick={() => handleBackClick(fork.owner.login)} className="btn btn-return"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/FFFFFF/long-arrow-left.png" alt="long-arrow-left" id="arrow-left"/> Voltar</button>
                   </div>
                 ) : (
-                  <button onClick={() => handleButtonClick(fork.owner.login)} className="btn btn-details" >Ver detalhes</button>
+                  <button onClick={() => handleButtonClick(fork.owner.login)} className="btn btn-details" >Ver detalhes <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/FFFFFF/long-arrow-right.png" alt="long-arrow-right" id="arrow-rigth"/></button>
                 )}
               </div>
             ))}

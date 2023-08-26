@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-.fork-infos {
+.card-infos {
     font-family: 'Poppins';
     font-weight: 300;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+
+.card-infos p {
+    display: flex;
     align-items: center;
+}
+
+.card-icon {
+    margin-right: 10px;
 }

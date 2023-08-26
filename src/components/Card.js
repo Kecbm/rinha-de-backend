@@ -33,7 +33,7 @@ function Card({ userFork }) {
   }, [userFork]);
 
   if (isLoading) {
-    return (<h1>Carregando ... 🐥🐤</h1>)
+    return (<h1 id="loading-card">Carregando ... 🐥🐤</h1>)
   }
 
   const dateBrasilian = (isoDateString) => {
@@ -45,50 +45,46 @@ function Card({ userFork }) {
 
   if (userRepository) {
     return (
-      <div>
-        <div>
+      <div className="card-infos">
+        <a
+          href={userRepository.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p>
-            <strong>Link do Repositório</strong>{' '}
-            <a
-              href={userRepository.html_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {userRepository.html_url}
-            </a>
+          <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/folder-invoices--v1.png" alt="folder-invoices--v1" className="card-icon"/><strong>Link do Repositório</strong>
           </p>
+        </a>
+        <p>
+        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong>Última Atualização:</strong> {dateBrasilian(userRepository.updated_at)}
+        </p>
+        <a
+          href={userRepository.clone_url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p>
-            <strong>Última Atualização:</strong> {dateBrasilian(userRepository.updated_at)}
+          <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/github.png" alt="github" className="card-icon"/><strong>Clone URL</strong>
           </p>
-          <p>
-            <strong>Clone URL</strong>{' '}
-            <a
-              href={userRepository.clone_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {userRepository.clone_url}
-            </a>
-          </p>
-        </div>
+        </a>
       </div>
     );
   }
 
   if (userFork) {
     return (
-      <div className="fork-infos">
+      <div className="card-infos">
         <a
           href={userFork.html_url}
           target="_blank"
           rel="noopener noreferrer"
         >
           <p>
-            <strong>Link do Repositório</strong>
+          <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/folder-invoices--v1.png" alt="folder-invoices--v1" className="card-icon"/><strong>Link do Repositório</strong>
           </p>
         </a>
         <p>
-          <strong>Última Atualização:</strong> {dateBrasilian(userFork.updated_at)}
+        <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/restart--v2.png" alt="restart--v2" className="card-icon"/><strong>Última Atualização</strong>{dateBrasilian(userFork.updated_at)}
         </p>
         <a
           href={userFork.clone_url}
@@ -96,7 +92,7 @@ function Card({ userFork }) {
           rel="noopener noreferrer"
         >
           <p>
-            <strong>Clone URL</strong>
+          <img width="35" height="35" src="https://img.icons8.com/3d-fluency/94/github.png" alt="github" className="card-icon"/><strong>Clone URL</strong>
           </p>
         </a>
       </div>
