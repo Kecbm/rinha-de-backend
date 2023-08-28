@@ -9,7 +9,7 @@ body {
     background-color: #F5F5F5;
 }
 
-#header {
+/* #header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -21,9 +21,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #FFFFFF;
-}
+} */
 
-#icon-chicken {
+/* #icon-chicken {
     margin-right: 10px;
     animation: rotateImage 1.5s infinite;
 }
@@ -35,9 +35,9 @@ body {
     100% {
       transform: rotate(60deg);
     }
-}
+} */
 
-#header h1 {
+/* #header h1 {
     color: #820AD1;
 }
 
@@ -83,7 +83,7 @@ a {
 
 .space {
     width: 150px;
-}
+} */
 
 .loading-home {
     width: 100vw;
