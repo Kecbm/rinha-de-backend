@@ -1,45 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
-import '../css/Forks.css'
+import '../css/Forks.css';
 
-function Forks() {
-  const [forks, setForks] = useState([]);
+function Forks({ forks }) {
+//   const [forks, setForks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showCardForUser, setShowCardForUser] = useState({});
 
-  useEffect(() => {
-    async function fetchAllForks() {
-      try {
-        const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
-        var page = 1;
-        var allForks = [];
+//   useEffect(() => {
+//     async function fetchAllForks() {
+//       try {
+//         const repoUrl = 'https://api.github.com/repos/zanfranceschi/rinha-de-backend-2023-q3/forks';
+//         var page = 1;
+//         var allForks = [];
     
-        while (true) {
-          const response = await fetch(`${repoUrl}?page=${page}`);
-          const forksData = await response.json();
+//         while (true) {
+//           const response = await fetch(`${repoUrl}?page=${page}`);
+//           const forksData = await response.json();
     
-          if (forksData.length === 0) {
-            break;
-          }
+//           if (forksData.length === 0) {
+//             break;
+//           }
 
-          page++;
+//           page++;
     
-          allForks = allForks.concat(forksData);
-        }
+//           allForks = allForks.concat(forksData);
+//         }
   
-        allForks.sort((a, b) => a.owner.login.localeCompare(b.owner.login));
+//         allForks.sort((a, b) => a.owner.login.localeCompare(b.owner.login));
 
-        setForks(allForks);
+//         setForks(allForks);
+//         console.log('allForks: ', allForks);
 
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3500); 
-      } catch (error) {
-        console.error('Erro ao buscar forks: ', error);
-      }
-    }
+//         setTimeout(() => {
+//           setIsLoading(false);
+//         }, 3500); 
+//       } catch (error) {
+//         console.error('Erro ao buscar forks: ', error);
+//       }
+//     }
 
-    fetchAllForks();
+//     fetchAllForks();
+//   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 3500); 
   }, []);
 
   const handleButtonClick = (userLogin) => {
@@ -54,7 +61,7 @@ function Forks() {
     const userFork = forks.find((fork) => fork.owner.login === userLogin);
 
     return userFork;
-  }
+  };
 
   return (
     <div>
@@ -67,7 +74,7 @@ function Forks() {
       ) : (
         <div>
           <div id="home-content">
-            {forks?.map((fork) => (
+            {forks && forks.map((fork) => (
               <div key={fork.id} className="card-user">
                 <a href={fork.owner.html_url} target="_blank" rel="noopener noreferrer">
                   <img src={fork.owner.avatar_url} alt={fork.owner.login}  className="user-img" />
