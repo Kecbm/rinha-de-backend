@@ -43,7 +43,7 @@ function App() {
     <Link to="/winner">
       <button className="btn">Vencedor</button>
     </Link>
-    <Link to="/languagens">
+    <Link to="/languages">
       <button className="btn">Linguagens</button>
     </Link>
     <Link to="/prizes">
