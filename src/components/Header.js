@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Header.css'
 
 function App() {
@@ -33,12 +34,24 @@ function App() {
 
     <span className="space" />
     
-    <button className="btn">Participantes</button>
-    <button className="btn">Top 10</button>
-    <button className="btn">Vencedor</button>
-    <button className="btn">Forks</button>
-    <button className="btn">Linguagens</button>
-    <button className="btn">Prêmios</button>
+    <Link to="/">
+      <button className="btn">Participantes</button>
+    </Link>
+    <Link to="/podium">
+      <button className="btn">Top 10</button>
+    </Link>
+    <Link to="/winner">
+      <button className="btn">Vencedor</button>
+    </Link>
+    <Link to="/languagens">
+      <button className="btn">Linguagens</button>
+    </Link>
+    <Link to="/prizes">
+      <button className="btn">Prêmios</button>
+    </Link>
+    <Link to="/forks">
+      <button className="btn">Forks</button>
+    </Link>
 
     <span className="space" />
 
