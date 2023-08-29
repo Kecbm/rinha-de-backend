@@ -1,8 +1,10 @@
 const podiumRanking = [
     {
         position: 1,
-        userLogin: 'viniciusfonseca',
-        language: ''
+        login: 'viniciusfonseca',
+        peopleCount: 44936,
+        p99: 17418,
+        language: 'Rust'
     }
 ];
 
