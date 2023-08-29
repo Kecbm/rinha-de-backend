@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Karla&family=Oswald:wght@500&family=Sintony:wght@700&display=swap');
+
+#winner {
+    margin-top: 100px;
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card-winner {
+    border-radius: 5px;
+    height: 700px;
+    width: 500px;
+    margin: 10px 10px 10px 10px;
+    background-color: #ecff41;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 20px 25px 15px rgba(0, 0, 0, 0.05), 0px 20px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+#card-winner:hover {
+    border: 2px solid #a68b02;
+    background-color: #f2ff0d;
+}
+
+#winner-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+#winner-img:hover {
+    border: 4px solid #896c0a;
+}
+
+#winner-login {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 50px;
+    color: black;
+    text-align: center;
+}
+
+#winner-login:hover {
+    color: #443004;
+}
+
+#winner p {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 25px;
+}
