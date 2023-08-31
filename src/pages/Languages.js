@@ -13,15 +13,15 @@ function Languages() {
   }, []);
 
   return (
-    <div id="languages">
+    <div>
       {isLoading ? (
         <Loading />
       ) : (
-        <div>
+        <div id="languages">
           { 
             languagesRanking.map((language, index) => (
               <div key={index} className="language-card">
-                <h2 className="language-position">{language.position}</h2>
+                <h2 className="language-position">{language.position} º</h2>
                 <h1 className="language-name">{language.name}</h1>
               </div>
             ))
