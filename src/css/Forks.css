@@ -9,42 +9,6 @@ body {
     background-color: #F5F5F5;
 }
 
-.loading-home {
-    max-width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.loading-home img {
-    display: inline-block;
-}
-
-.loading-home img {
-    animation: bounce .6s cubic-bezier(0.6, 0.1, 1, 0.4);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-.loading-home img:nth-child(1) {
-    animation-delay: .1s;
-}
-
-.loading-home img:nth-child(2) {
-    animation-delay: .2s;
-}
-
-.loading-home img:nth-child(3) {
-    animation-delay: .3s;
-}
-
-@keyframes bounce {
-    to {
-        transform: translateY(50px);
-    }
-}
-
 #home-content {
     display: flex;
     justify-content: center;
