@@ -2,9 +2,8 @@
 
 #languages {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
     min-height: 100vh;
     max-height: fit-content;
     max-width: 100vw;
@@ -14,28 +13,37 @@
 
 .language-card {
     border-radius: 5px;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 400px;
     margin: 5px 5px 5px 5px;
     background-color: #1111111A;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.language-card:hover {
+    border: 2px solid #bdbdbd;
+    background-color: #efefef;
 }
 
 .language-name {
     font-family: 'Oswald';
     font-weight: 500;
-    font-size: 28px;
-    color: black;
+    font-size: 35px;
     text-align: center;
 }
 
 .language-position {
     font-family: 'Poppins';
     font-weight: 300;
+    font-size: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.language-image {
+    height: 80px;
 }

@@ -13,7 +13,7 @@ function Languages() {
   }, []);
 
   return (
-    <div>
+    <div id="language-page">
       {isLoading ? (
         <Loading />
       ) : (
@@ -21,8 +21,9 @@ function Languages() {
           { 
             languagesRanking.map((language, index) => (
               <div key={index} className="language-card">
-                <h2 className="language-position">{language.position} º</h2>
-                <h1 className="language-name">{language.name}</h1>
+                <h1 className="language-position">{language.position} º</h1>
+                <img src={language.image} alt={language.name} className="language-image"/>
+                <h2 className="language-name">{language.name}</h2>
               </div>
             ))
           }
