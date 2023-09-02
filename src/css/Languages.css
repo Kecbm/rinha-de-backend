@@ -93,8 +93,7 @@
     height: 100px;
     width: 350px;
     margin: 5px 5px 5px 5px;
-    background-color: #62099a;
-    color: #F5F5F5;
+    background-color: #1111111A;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     padding: 20px;
     display: flex;
@@ -103,8 +102,8 @@
 }
 
 .language-card:hover {
-    background-color: #430074;
-    color: #FFFFFF;
+    border: 2px solid #bdbdbd;
+    background-color: #efefef;
 }
 
 .language-name {
