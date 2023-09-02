@@ -48,7 +48,7 @@ const languagesRanking = [
         // quantityProjects: ''
     },
     {
-        name: 'Ruby on Rails',
+        name: 'Ruby',
         position: 19,
         image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg',
         // quantityProjects: ''
