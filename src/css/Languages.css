@@ -47,45 +47,42 @@
 }
 
 .top-languages:nth-child(1) {
-    color: #e9bf29;
     animation: colorGolden 9s infinite linear;
+    color: #e9bf29;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 @keyframes colorGolden {
-    0%   { background: #ffffe7 }
-    20%  { background: #feffc1 }
-    40%  { background: #fffd86 }
-    60%  { background: #fff441 }
-    80%  { background: #ffe60d }
-    100% { background: #ffd700 }
+    0%   { background: #fef08a }
+    33.33%  { background: #fde047 }
+    66.66%  { background: #facc15 }
+    100%  { background: #eab308 }
 }
 
 .top-languages:nth-child(2) {
     animation: colorSilver 9s infinite linear;
     color: #616868;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 @keyframes colorSilver {
-    0%   { background: #f5f6f6 }
-    20%  { background: #e6e7e7 }
-    40%  { background: #cfd2d1 }
-    60%  { background: #adb3b3 }
-    80%  { background: #848c8b }
-    100% { background: #697170 }
+    0%   { background: #e2e8f0 }
+    33.33%  { background: #cbd5e1 }
+    66.66%  { background: #94a3b8 }
+    100%  { background: #64748b }
 }
 
 .top-languages:nth-child(3) {
     animation: colorBrass 9s infinite linear;
     color: #c1512c;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 @keyframes colorBrass {
-    0%   { background: #fcf6f0 }
-    20%  { background: #f9e9db }
-    40%  { background: #f1d1b7 }
-    60%  { background: #e8b189 }
-    80%  { background: #de8859 }
-    100% { background: #d76a38 }
+    0%   { background: #fed7aa }
+    33.33%  { background: #fdba74 }
+    66.66%  { background: #fb923c }
+    100% { background: #f97316 }
 }
 
 .language-card {
