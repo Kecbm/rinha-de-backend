@@ -50,7 +50,7 @@ function App() {
         <Routes>
           <Route
             exact path="/"
-            element={<Participants />}
+            element={<Participants forks={forks} />}
           />
           <Route
             exact path="/podium"
