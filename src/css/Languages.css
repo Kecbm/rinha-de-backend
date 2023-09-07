@@ -47,7 +47,7 @@
 }
 
 .top-languages:nth-child(1) {
-    animation: colorGolden 9s infinite linear;
+    animation: colorGolden 9s infinite;
     color: #e9bf29;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -60,7 +60,7 @@
 }
 
 .top-languages:nth-child(2) {
-    animation: colorSilver 9s infinite linear;
+    animation: colorSilver 9s infinite;
     color: #616868;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -73,7 +73,7 @@
 }
 
 .top-languages:nth-child(3) {
-    animation: colorBrass 9s infinite linear;
+    animation: colorBrass 9s infinite;
     color: #c1512c;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
