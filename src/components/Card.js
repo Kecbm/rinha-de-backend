@@ -5,8 +5,6 @@ function Card({ userFork }) {
   const [userRepository, setUserRepository] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log('userFork: ', userFork);
-
   useEffect(() => {
     async function fetchUserRepositories(userFork) {
       try {
@@ -17,7 +15,6 @@ function Card({ userFork }) {
     
           const filteredRepos = repositories.find(repo => repo.name.includes('rinha-de-backend'));
     
-          console.log('filteredRepos: ', filteredRepos);
           setUserRepository(filteredRepos);
 
           setTimeout(() => {

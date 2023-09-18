@@ -8,28 +8,28 @@ const usersRanking = [
     },
     {
         position: 2,
-        login: 'h4nkb31f0ng',
+        login: 'leorcvargas',
         peopleCount: 44270,
         p99: 16405,
         language: 'Go'
     },
     {
         position: 3,
-        login: 'grupo-2a',
+        login: 'andr3marra',
         peopleCount: 44100,
         p99: 17588,
         language: '.NET'
     },
     {
         position: 4,
-        login: 'isadora-souza',
+        login: 'isadoramsouza',
         peopleCount: 42122,
         p99: 55570,
         language: 'Go'
     },
     {
         position: 5,
-        login: 'sofia_aripiprazole',
+        login: 'aripiprazole',
         peopleCount: 	40938,
         p99: 62753,
         language: 'C++'
@@ -64,7 +64,7 @@ const usersRanking = [
     },
     {
         position: 10,
-        login: 'navarro-touche',
+        login: 'reu',
         peopleCount: 35865,
         p99: 12773,
         language: 'Rust'
@@ -85,7 +85,7 @@ const usersRanking = [
     },
     {
         position: 13,
-        login: 'luucaspole',
+        login: 'lukas8219',
         peopleCount: 34165,
         p99: 48510,
         language: 'Node'
@@ -162,14 +162,14 @@ const usersRanking = [
     },
     {
         position: 24,
-        login: 'lauroappeltv2',
+        login: 'lauroappelt',
         peopleCount: 16554,
         p99: 13854,
         language: 'PHP'
     },
     {
         position: 25,
-        login: 'true_eduardo',
+        login: 'eduwr',
         peopleCount: 16415,
         p99: 7893,
         language: 'Go'
@@ -211,7 +211,7 @@ const usersRanking = [
     },
     {
         position: 31,
-        login: 'viniciusferraz-nativo',
+        login: 'viniciusfcf',
         peopleCount: 12247,
         p99: 5879,
         language: 'Rust'
@@ -239,14 +239,14 @@ const usersRanking = [
     },
     {
         position: 35,
-        login: 'EuFountai',
+        login: 'eletroswing',
         peopleCount: 10549,
         p99: 58238,
         language: 'Node'
     },
     {
         position: 36,
-        login: 'andrew-vasco',
+        login: 'Andrewsoares15',
         peopleCount: 8869,
         p99: 59655,
         language: 'Java'
@@ -260,7 +260,7 @@ const usersRanking = [
     },
     {
         position: 38,
-        login: 'gustavocs789',
+        login: 'GustavoCesarSantos',
         peopleCount: 8002,
         p99: 18608,
         language: 'Node'
@@ -281,7 +281,7 @@ const usersRanking = [
     },
     {
         position: 41,
-        login: 'bpaulino0',
+        login: 'brunojppb',
         peopleCount: 7351,
         p99: 37202,
         language: 'Elixir'
@@ -316,7 +316,7 @@ const usersRanking = [
     },
     {
         position: 46,
-        login: 'giovannibassi',
+        login: 'giggio',
         peopleCount: 5658,
         p99: 58745,
         language: '.NET'
@@ -337,7 +337,7 @@ const usersRanking = [
     },
     {
         position: 49,
-        login: 'Pr3d4dor-php-puro',
+        login: 'Pr3d4dor',
         peopleCount: 3002,
         p99: 59348,
         language: 'PHP'
@@ -351,7 +351,7 @@ const usersRanking = [
     },
     {
         position: 51,
-        login: 'leandronsp-bash',
+        login: 'leandronsp',
         peopleCount: 17,
         p99: 47482,
         language: 'Bash'
@@ -372,9 +372,9 @@ const usersRanking = [
         language: 'Go'
     },
     {
-        login: 'dupla-de-2',
-        p99: 51942, language:
-        'Java'
+        login: 'willy-r',
+        p99: 51942,
+        language: 'Java'
     },
     {
         login: 'marcospaulo',
@@ -387,7 +387,7 @@ const usersRanking = [
         language: 'Go'
     },
     {
-        login: 'Bandolin_simplified_api',
+        login: 'jpmbandolin',
         p99: 40267,
         language: 'PHP'
     },
@@ -397,7 +397,7 @@ const usersRanking = [
         language: '.NET'
     },
     {
-        login: 'Pr3d4dor-laravel',
+        login: 'Pr3d4dor',
         p99: 24781,
         language: 'PHP'
     },
@@ -457,11 +457,11 @@ const usersRanking = [
         language: 'Elixir'
     },
     {
-        login: 'alberto_souza',
+        login: 'asouza',
         language: 'Java'
     },
     {
-        login: 'allan-cordeiro',
+        login: 'allanCordeiro',
         language: 'Go'
     },
     {
@@ -481,7 +481,7 @@ const usersRanking = [
         language: 'Java'
     },
     {
-        login: 'fabricio_juliatto',
+        login: 'VFabricio',
         language: 'Rust'
     },
     {

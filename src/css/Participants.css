@@ -1,7 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Karla&family=Oswald:wght@500&family=Sintony:wght@700&family=Poppins:wght@300&display=swap');
+
 #participants {
-    max-width: 100vw;
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    max-height: fit-content;
+    max-width: 100vw;
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #F5F5F5;
+}
+
+.card-participant {
+    border-radius: 5px;
+    height: 370px;
+    width: 330px;
+    margin: 10px 10px 10px 10px;
+    background-color: #1111111A;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-participant:hover {
+    border: 2px solid #bdbdbd;
+    background-color: #efefef;
+}
+
+.img-participant {
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+}
+
+.img-participant:hover {
+    border: 4px solid #00c8d5;
+}
+
+.participant-login {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 28px;
+    color: black;
+    text-align: center;
+}
+
+.participant-login:hover {
+    color: #820AD1;
+}
+
+.participants-infos {
+    font-family: 'Poppins';
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
