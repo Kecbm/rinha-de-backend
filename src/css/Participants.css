@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Karla&family=Oswald:wght@500&family=Sintony:wght@700&family=Poppins:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@300&display=swap');
 #participants {
     display: flex;
     justify-content: center;
@@ -31,6 +30,15 @@
     background-color: #efefef;
 }
 
+.participant-position {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 28px;
+    color: #820AD1;
+    text-align: center;
+    right: 0;
+}
+
 .img-participant {
     border-radius: 50%;
     width: 140px;
@@ -53,10 +61,25 @@
     color: #820AD1;
 }
 
-.participants-infos {
+.participant-infos {
     font-family: 'Poppins';
     font-weight: 300;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 5px;
+}
+
+.participant-infos p {
+    display: flex;
+    align-items: center;
+}
+
+.participant-infos p strong {
+    margin-right: 5px;
+}
+
+.card-participant-icon {
+    margin-right: 5px;
 }
