@@ -46,9 +46,6 @@ function App() {
     <Link to="/languages">
       <button className="btn">Linguagens</button>
     </Link>
-    <Link to="/prizes">
-      <button className="btn">Prêmios</button>
-    </Link>
     <Link to="/forks">
       <button className="btn">Forks</button>
     </Link>
