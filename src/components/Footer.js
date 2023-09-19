@@ -47,7 +47,9 @@ function Footer() {
 
     <div>
         <h3>Live</h3>
+        <a href="https://www.youtube.com/watch?v=VupOWCVQwR8" target="_blank" rel="noopener noreferrer">
         <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/youtube--v1.png" alt="Youtube"/>
+        </a>
     </div>
 
     <div>
