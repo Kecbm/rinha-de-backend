@@ -1,4 +1,4 @@
-<h1 id="top" align="center">Boas vindas ao repositório do Frontend da <a href="https://github.com/lincolixavier/tretadev" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> 🐓</h1>
+<h1 id="top" align="center">Boas vindas ao repositório do Frontend da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> 🐓</h1>
 
 <h2>Sumário:</h2>
 
@@ -25,7 +25,7 @@ Tive a honra de desenvolver o site da excepcional Rinha de Backend, um marco his
 
 <details><summary>Frontend da rinha de backend 🗂</summary>
 <p>
-<a href="https://rinhadebackend.vercel.app/" target="_blank" rel="noopener noreferrer">Na aplicação</a> você tem acesso a todas as informações do  repositório da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> do <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">Francisco Zanfranceschi</a>. É possivel acessar a lista de participantes, o top 10, o vencedor, o ranking de linguagens e os forks do repositório.
+<a href="https://rinhadebackend.vercel.app/" target="_blank" rel="noopener noreferrer">Na aplicação</a> você tem acesso a todas as informações do  repositório da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> do <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">Francisco Zanfranceschi</a>. No site é possivel acessar a lista de participantes, o top 10, o vencedor, o ranking de linguagens e os forks do repositório.
 </p>
 </details>
 
