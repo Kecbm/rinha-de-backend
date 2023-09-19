@@ -1,5 +1,7 @@
 <h1 id="top" align="center">Boas vindas ao repositório do Frontend da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> 🐓</h1>
 
+![Site da Rinha de Backend](https://github.com/Kecbm/rinhadebackend/blob/master/src/assets/Site%20da%20rinha.gif)
+
 <h2>Sumário:</h2>
 
 - [O que foi desenvolvido](#summary)
@@ -23,7 +25,7 @@ Tive a honra de desenvolver o site da excepcional Rinha de Backend, um marco his
 </p>
 </details>
 
-<details><summary>Frontend da rinha de backend 🗂</summary>
+<details><summary>Frontend da Rinha de Backend 🗂</summary>
 <p>
 <a href="https://rinhadebackend.vercel.app/" target="_blank" rel="noopener noreferrer">Na aplicação</a> você tem acesso a todas as informações do  repositório da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> do <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">Francisco Zanfranceschi</a>. No site é possivel acessar a lista de participantes, o top 10, o vencedor, o ranking de linguagens e os forks do repositório.
 </p>
