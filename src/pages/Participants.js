@@ -18,7 +18,7 @@ function Participants() {
         isLoading ? (<Loading />) : (
             usersRanking.map((user) => (
             <div key={user.id} className="card-participant">
-              <h1 className="participant-position">{user.position}°</h1>
+              <h1 className="participant-position">{user.position}</h1>
               <a href={`https://github.com/${user.login}`} target="_blank" rel="noopener noreferrer">
                 <img src={`https://github.com/${user.login}.png`} alt={`Foto do usuário ${user.login}`} className="img-participant" />
               </a>
