@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+::selection {
+    background-color: #00c8d5;
+}
+
 body {
     background-color: #F5F5F5;
 }
