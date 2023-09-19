@@ -40,6 +40,10 @@
     border: 8px solid #e9bf29;
 }
 
+.card-podium:nth-child(1) .podium-login:hover {
+    color: #bb8213;
+}
+
 @keyframes colorGolden {
     0%   { background: #dcf625 }
     33.33%  { background: #fffe0d }
@@ -61,6 +65,10 @@
     border: 8px solid #616868 !important;
 }
 
+.card-podium:nth-child(2) .podium-login:hover {
+    color: #434747;
+}
+
 @keyframes colorSilver {
     0%   { background: #b0b0b0 }
     33.33%  { background: #888888 }
@@ -80,6 +88,10 @@
 
 .card-podium:nth-child(3) .img-podium {
     border: 8px solid #c1512c;
+}
+
+.card-podium:nth-child(3) .podium-login:hover {
+    color: #853527;
 }
 
 @keyframes colorBrass {
