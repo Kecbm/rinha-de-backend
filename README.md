@@ -1,7 +1,5 @@
 <h1 id="top" align="center">Boas vindas ao repositório do Frontend da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> 🐓</h1>
 
-file:///home/Klecianny/Downloads/Rinha.gif
-
 <h2>Sumário:</h2>
 
 - [O que foi desenvolvido](#summary)
