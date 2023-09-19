@@ -1,7 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@300&display=swap');
+
 #podium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    max-height: fit-content;
     max-width: 100vw;
-    height: 100vh;
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #F5F5F5;
+}
+
+.card-podium {
+    border-radius: 5px;
+    height: 600px;
+    width: 400px;
+    margin: 10px 10px 10px 10px;
+    background-color: #1111111A;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-podium:nth-child(1) {
+    animation: colorGolden 9s infinite;
+    border: 4px solid #e9bf29 !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card-podium:nth-child(1) .podium-position {
+    color: #bb8213;
+}
+
+.card-podium:nth-child(1) .img-podium {
+    border: 8px solid #e9bf29;
+}
+
+@keyframes colorGolden {
+    0%   { background: #dcf625 }
+    33.33%  { background: #fffe0d }
+    66.66%  { background: #ede405 }
+    100%  { background: #efd503 }
+}
+
+.card-podium:nth-child(2) {
+    animation: colorSilver 9s infinite;
+    border: 4px solid #616868 !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card-podium:nth-child(2) .podium-position {
+    color: #434747;
+}
+
+.card-podium:nth-child(2) .img-podium {
+    border: 8px solid #616868 !important;
+}
+
+@keyframes colorSilver {
+    0%   { background: #b0b0b0 }
+    33.33%  { background: #888888 }
+    66.66%  { background: #999999 }
+    100%  { background: #6d6d6d }
+}
+
+.card-podium:nth-child(3) {
+    animation: colorBrass 9s infinite;
+    border: 4px solid #c1512c !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.card-podium:nth-child(3) .podium-position {
+    color: #853527;
+}
+
+.card-podium:nth-child(3) .img-podium {
+    border: 8px solid #c1512c;
+}
+
+@keyframes colorBrass {
+    0%   { background: #ffa132 }
+    33.33%  { background: #ff720a }
+    66.66%  { background: #e45f2b }
+    100% { background: #f05106 }
+}
+
+.card-podium:hover {
+    border: 4px solid #bdbdbd;
+    background-color: #efefef;
+}
+
+.podium-position {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 40px;
+    color: #820AD1;
+}
+
+.img-podium {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.img-podium:hover {
+    border: 8px solid #00c8d5;
+}
+
+.podium-login {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 45px;
+    color: black;
+    text-align: center;
+}
+
+.podium-login:hover {
+    color: #820AD1;
+}
+
+.podium-infos {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+.podium-infos p {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.podium-infos p strong {
+    margin-right: 5px;
+}
+
+.card-podium-icon {
+    margin-right: 5px;
 }
