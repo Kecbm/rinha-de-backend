@@ -6,7 +6,6 @@ import Podium from './pages/Podium';
 import Winner from './pages/Winner';
 import Languages from './pages/Languages';
 import Forks from './pages/Forks';
-import Prizes from './pages/Prizes';
 import Footer from './components/Footer';
 import './css/App.css';
 
@@ -63,10 +62,6 @@ function App() {
           <Route
             exact path="/languages"
             element={<Languages />}
-          />
-          <Route
-            exact path="/prizes"
-            element={<Prizes />}
           />
           <Route
             exact path="/forks"
