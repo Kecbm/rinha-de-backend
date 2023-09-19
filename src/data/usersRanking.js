@@ -4,21 +4,24 @@ const usersRanking = [
         login: 'viniciusfonseca',
         peopleCount: 44936,
         p99: 17418,
-        language: 'Rust'
+        language: 'Rust',
+        iconColor: 'bb8213'
     },
     {
         position: '2°',
         login: 'leorcvargas',
         peopleCount: 44270,
         p99: 16405,
-        language: 'Go'
+        language: 'Go',
+        iconColor: '434747'
     },
     {
         position: '3°',
         login: 'andr3marra',
         peopleCount: 44100,
         p99: 17588,
-        language: '.NET'
+        language: '.NET',
+        iconColor: '853527'
     },
     {
         position: '4°',
