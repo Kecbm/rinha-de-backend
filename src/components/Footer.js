@@ -40,14 +40,14 @@ function Footer() {
 
     <div>
         <h3>Rinha de Backend</h3>
-        <a href="https://www.youtube.com/watch?v=VupOWCVQwR8" target="_blank" rel="noopener noreferrer">
-        <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/youtube--v1.png" alt="Youtube"/>
-        </a>
         <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">
         <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/github.png" alt="GitHub"/>
         </a>
         <a href="https://twitter.com/rinhadebackend" target="_blank" rel="noopener noreferrer">
         <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/twitter--v1.png" alt="Twitter"/>
+        </a>
+        <a href="https://www.youtube.com/watch?v=VupOWCVQwR8" target="_blank" rel="noopener noreferrer">
+        <img width="50" height="50" src="https://img.icons8.com/ios-glyphs/90/FFFFFF/youtube--v1.png" alt="Youtube"/>
         </a>
     </div>
 
