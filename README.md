@@ -1,57 +1,58 @@
-<h1 id="top" align="center">Boas vindas ao repositório do Frontend da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> 🐓</h1>
+<h1 id="top" align="center">Frontend of <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Backend Rinha</a> 🐓</h1>
 
 ![Site da Rinha de Backend](https://github.com/Kecbm/rinhadebackend/blob/master/src/assets/Site%20da%20rinha.gif)
 
-<h2>Sumário:</h2>
+<h2>Summary:</h2>
 
-- [O que foi desenvolvido](#summary)
-- [Tecnologias utilizadas](#tech)
-- [Executar o projeto](#execute)
-- [Próximos passos](#nextSteps)
+- [What was developed](#summary)
+- [Technologies used](#tech)
+- [Execute the project](#execute)
+- [Next steps](#nextSteps)
 
 ---
 
-<h2 id="summary">O que foi desenvolvido 👩‍💻</h2>
+<h2 id="summary">What was developed 👩‍💻</h2>
 
 <br>
 
-Uma aplicação **Frontend** utilizando `React` e `CSS`.
+A **Frontend** application using `React`, `HTML`, `CSS` and `JavaScript`.
 
 <br>
 
-<details><summary>Desenvolvimento 🎯</summary>
+<details><summary>Development 🎯</summary>
 <p>
-Tive a honra de desenvolver o site da excepcional Rinha de Backend, um marco histórico na Bolha Dev do Twitter e das demais localidades da rede mundial de computadores.
+I had the honor of developing the website for the exceptional Rinha de Backend, a historic milestone in the Twitter Dev Bubble and other locations on the world wide web.
 </p>
 </details>
 
-<details><summary>Frontend da Rinha de Backend 🗂</summary>
+<details><summary>Frontend of Backend Rinha 🗂</summary>
 <p>
-<a href="https://rinhadebackend.vercel.app/" target="_blank" rel="noopener noreferrer">Na aplicação</a> você tem acesso a todas as informações do  repositório da <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Rinha de Backend</a> do <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">Francisco Zanfranceschi</a>. No site é possivel acessar a lista de participantes, o top 10, o vencedor, o ranking de linguagens e os forks do repositório.
+<a href="https://rinhadebackend.vercel.app/" target="_blank" rel="noopener noreferrer">In application</a> you have access to all the information in the repository <a href="https://github.com/zanfranceschi/rinha-de-backend-2023-q3" target="_blank" rel="noopener noreferrer">Backend Rinha</a> of <a href="https://github.com/zanfranceschi" target="_blank" rel="noopener noreferrer">Francisco Zanfranceschi</a>. On the website you can access the list of participants, the top 10, the winner, the language ranking and the repository forks.
 </p>
 </details>
 
-<p align="right"><a href="#top">Voltar ao topo ☝</a></p>
+<p align="right"><a href="#top">Back to the top ☝</a></p>
 
 ---
 
-<h2 id="tech">Tecnologias utilizadas 🛠</h2>
+<h2 id="tech">Technologies used 🛠</h2>
 
 <br>
 
-<img title="React" alt="React" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /> <img title="HTML" alt="HTML" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> <img title="CSS" alt="CSS" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img title="React" alt="React" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" /> <img title="HTML" alt="HTML" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> <img title="CSS" alt="CSS" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> <img title="JavaScript" alt="JavaScript" height="80" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+          
 
-<p align="right"><a href="#top">Voltar ao topo ☝</a></p>
+<p align="right"><a href="#top">Back to the top ☝</a></p>
 
 ---
 
-<h2 id="execute">Executar o projeto 💻</h2>
+<h2 id="execute">Execute the project 💻</h2>
 
 <br>
 
-<details><summary>Aplicação React 🎉</summary>
+<details><summary>React Application 🎉</summary>
 <p>
-Para instalar as dependências e iniciar a aplicação React, execute os comandos na ordem a seguir:
+To install the dependencies and start the React application, run the commands in the following order:
 
 ```bash
   cd rinhadebackend
@@ -72,19 +73,19 @@ Para instalar as dependências e iniciar a aplicação React, execute os comando
 </p>
 </details>
 
-<p align="right"><a href="#top">Voltar ao topo ☝</a></p>
+<p align="right"><a href="#top">Back to the top ☝</a></p>
 
 ---
 
-<h2 id="nextSteps">Próximos passos 🚀</h2>
+<h2 id="nextSteps">Next steps 🚀</h2>
 
 <br>
-O projeto é open-source onde qualquer pessoa da comunidade pode contribuir. Sinta-se a vontade para abrir um PR e desenvolver melhorias ou novas features. Será uma honra ter você como pessoa colaboradora desse repositório!
+The project is open-source where anyone in the community can contribute. Feel free to open a PR and develop improvements or new features. It will be an honor to have you as a contributor to this repository!
 <br>
 <br>
 
-<p align="right"><a href="#top">Voltar ao topo ☝</a></p>
+<p align="right"><a href="#top">Back to the top ☝</a></p>
 
 ---
 
-<p align="center">Projeto desenvolvido por <a href="https://www.linkedin.com/in/kecbm/" target="_blank" rel="noopener noreferrer">Klecianny Melo</a> 😁</p>
+<p align="center">Project developed by <a href="https://www.linkedin.com/in/kecbm/" target="_blank" rel="noopener noreferrer">Klecianny Melo</a> 😁</p>
